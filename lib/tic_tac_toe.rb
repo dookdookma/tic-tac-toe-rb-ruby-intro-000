@@ -72,18 +72,6 @@ def turn(board)
   end
 end
 
-def Oturn(board)
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
-  if valid_move?(board, index) == true
-    move(board, index, current_player = "O")
-    display_board(board)
-  else
-    turn(board)
-  end
-end
-
 def won?(board)
     WIN_COMBINATIONS.detect do |combo|
       board[combo[0]] == board[combo[1]] &&
